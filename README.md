@@ -6,7 +6,7 @@ A library of functions to analyze, visualize and export proteomics data
 You can install this package from GitHub via:
 
 ```
-pak::pkg_install("tidyverse/tibble")
+pak::pkg_install("nicohuttmann/msTools")
 ```
  or the old-fashioned way 
 ```
