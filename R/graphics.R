@@ -192,4 +192,18 @@ tiff_open <- function(file) {
 }
 
 
-
+#' Plots text on an empty ggplots
+#'
+#' @param text text to display
+#' @param size text size
+#'
+#' @returns
+#' @export
+#'
+#' @examples
+plot_ggtext <- function(text = "Lorem ipsum whatever", size = 8) {
+  ggplot2::ggplot() +
+    ggplot2::theme_void() +
+    ggplot2::annotate("text", x = 0, y = 0,
+                      label = text, size = size)
+}
