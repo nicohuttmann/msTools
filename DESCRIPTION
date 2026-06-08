@@ -1,5 +1,5 @@
 Package: msTools
-Title: Data-focused functions to analyze proteomics data 
+Title: Data-focused functions to analyze proteomics data
 Version: 0.0.0.9000
 Authors@R: 
     person("Nico", "Hüttmann", , "huttmann.nico@gmail.com", role = c("aut", "cre"),
@@ -9,7 +9,11 @@ License: MIT
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Suggests: 
+    knitr
+    rmarkdown
 VignetteBuilder: knitr
 Imports:
     tidyverse
+Remotes:
+    nicohuttmann/msArrow
 RoxygenNote: 7.3.3
