@@ -49,6 +49,25 @@ pdf_perm <- function(file, width = 5, height = 5, dir, ...) {
 }
 
 
+.file_dir_ext <- function(file, dir, fileext = "") {
+
+  # Combine or generate file name and directory
+  if (!hasArg(file) || is.null(file)) {
+    if (!hasArg(dir) || is.null(dir)) dir <- tempdir()
+    file_dir <- tempfile(tmpdir = dir, fileext = fileext)
+  } else {
+    if (hasArg(dir)) file_dir <- file.path(dir, file)
+    else file_dir <- file
+  }
+
+  # Check file extension
+  if (!stringr::str_detect(tolower(file_dir), paste0("\\.", fileext, "$")) && fileext != "")
+    file_dir <- paste0(file_dir, paste0(".", fileext))
+
+  return(file_dir)
+}
+
+
 #' Title
 #'
 #' @param file pdf file to open (opens file saved under .pdf_temp if no argument given)
@@ -74,6 +93,67 @@ pdf_open <- function(file) {
     system(paste0('open "', .pdf_temp, '"'))
     return(invisible(T))
   }
+}
+
+
+#' Title
+#'
+#' @param title
+#' @param width
+#' @param height
+#' @param expr
+#' @param file
+#' @param dir
+#' @param open
+#' @param ...
+#'
+#' @returns
+#' @export
+#'
+#' @examples
+pdf_ <- function(expr, title, width = 8, height = 5, file, dir, open = T, ...) {
+
+  file <- .file_dir_ext(file, dir, "pdf")
+  pdf(file = file,
+      width = width,
+      height = height,
+      ...)
+
+  if (!open) on.exit(dev.off())
+
+  expr <- substitute(expr)
+
+  # Split block into individual expressions, eval each with auto-print
+  exprs <- if (is.call(expr) && expr[[1]] == as.name("{")) {
+    as.list(expr)[-1]   # strip the `{`, get each statement
+  } else {
+    list(expr)
+  }
+
+  # add title
+  if (hasArg(title)) {
+    print(plot_ggtext(title))
+  }
+
+  for (e in exprs) {
+    tryCatch({
+      res <- withVisible(eval(e, envir = parent.frame()))
+      if (res$visible) print(res$value)
+    },
+    error = function(error) {
+      print(plot_ggtext(paste(error,
+                              paste(as.character(e),
+                                    collapse = "") %>%
+                                str_replace_all("%>%", "%>%\n") %>%
+                                str_replace_all("\\+", "\\+\n"),
+                              sep = "\n"),
+                        size = 5))
+    })
+  }
+
+  if (open) pdf_open(file)
+
+  return(invisible(file))
 }
 
 

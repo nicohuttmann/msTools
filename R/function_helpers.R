@@ -30,3 +30,30 @@ which_in <- function(x, y) {
 
 }
 
+
+#' Count unique elements
+#'
+#' @param x
+#'
+#' @returns
+#' @export
+#'
+#' @examples
+length_unique <- \(x) {
+  length(unique(x))
+}
+
+
+#' Count unique elemenmts with n >= 2
+#'
+#' @param x
+#'
+#' @returns
+#' @export
+#'
+#' @examples
+length_unique_min2 <- \(x) {
+  length(unique(x[duplicated(x)]))
+}
+
+

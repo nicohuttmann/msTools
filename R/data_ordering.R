@@ -81,3 +81,19 @@ partition_n2char <- function(x, n) {
 
 }
 
+
+#' Convert number vector to character and summarize x >= y to "y+"
+#'
+#' @param x vector of numbers
+#' @param y
+#'
+#' @returns
+#' @export
+#'
+#' @examples
+cap_n <- function(x, y = 5) {
+  ifelse(x >= y, paste0(y, "+"), x)
+}
+
+
+
