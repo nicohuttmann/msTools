@@ -1,0 +1,271 @@
+# Package index
+
+## Datasets
+
+The dataset store. A dataset is a folder holding variables, observations
+and any number of long `observations x variables` data frames, written
+to disk through msArrow. The registry lives in two objects in the global
+environment: `.Datasets` (paths) and `Datasets` (previews).
+
+- [`get_dataset()`](https://nicohuttmann.github.io/msTools/reference/get_dataset.md)
+  : Checks and returns correct dataset identifier
+- [`get_dataset_names()`](https://nicohuttmann.github.io/msTools/reference/get_dataset_names.md)
+  : Prints or returns all dataset names
+- [`.add_dataset()`](https://nicohuttmann.github.io/msTools/reference/dot-add_dataset.md)
+  : Registers a new dataset and creates its folder layout
+- [`retag_datasets()`](https://nicohuttmann.github.io/msTools/reference/retag_datasets.md)
+  : Change name or copy data before saving the RData environment
+
+## Variables
+
+Per-variable annotation (precursors, peptides, protein groups).
+
+- [`get_variables()`](https://nicohuttmann.github.io/msTools/reference/get_variables.md)
+  : Return variables
+- [`get_variables_data()`](https://nicohuttmann.github.io/msTools/reference/get_variables_data.md)
+  : Return variables data
+- [`get_variables_data_names()`](https://nicohuttmann.github.io/msTools/reference/get_variables_data_names.md)
+  : Returns variables data column names
+- [`add_variables_data()`](https://nicohuttmann.github.io/msTools/reference/add_variables_data.md)
+  : Add variables data to data frame
+- [`save_variables_data()`](https://nicohuttmann.github.io/msTools/reference/save_variables_data.md)
+  : Adds or updates variables data in a dataset
+- [`.save_variables_data()`](https://nicohuttmann.github.io/msTools/reference/dot-save_variables_data.md)
+  : Writes the variables data of a dataset to disk
+
+## Observations
+
+Per-observation annotation (runs, samples, conditions).
+
+- [`get_observations()`](https://nicohuttmann.github.io/msTools/reference/get_observations.md)
+  : Return observations
+- [`get_observations_data()`](https://nicohuttmann.github.io/msTools/reference/get_observations_data.md)
+  : Return observations data
+- [`get_observations_data_names()`](https://nicohuttmann.github.io/msTools/reference/get_observations_data_names.md)
+  : Returns observations data column names
+- [`add_observations_data()`](https://nicohuttmann.github.io/msTools/reference/add_observations_data.md)
+  : Add observations data to data frame
+- [`save_observations_data()`](https://nicohuttmann.github.io/msTools/reference/save_observations_data.md)
+  : Adds or updates observations data in a dataset
+- [`.save_observations_data()`](https://nicohuttmann.github.io/msTools/reference/dot-save_observations_data.md)
+  : Writes the observations data of a dataset to disk
+
+## Data frames
+
+The measured values themselves, stored long and read back on demand.
+
+- [`get_data_frame()`](https://nicohuttmann.github.io/msTools/reference/get_data_frame.md)
+  : Assemble data frame from dataset
+- [`get_data_frame_names()`](https://nicohuttmann.github.io/msTools/reference/get_data_frame_names.md)
+  : Prints or returns data names
+- [`open_data_frame()`](https://nicohuttmann.github.io/msTools/reference/open_data_frame.md)
+  : Assemble data frame from dataset
+- [`save_data_frame()`](https://nicohuttmann.github.io/msTools/reference/save_data_frame.md)
+  : Saves a data frame into a dataset store
+- [`.save_data_frame()`](https://nicohuttmann.github.io/msTools/reference/dot-save_data_frame.md)
+  : Writes a data frame of a dataset to disk
+
+## Importing DIA-NN reports
+
+Turn a DIA-NN report straight into a dataset store, without ever holding
+the whole report in memory.
+
+- [`import_diann()`](https://nicohuttmann.github.io/msTools/reference/import_diann.md)
+  : Imports a DIA-NN report into a dataset store
+- [`import_diann_channel()`](https://nicohuttmann.github.io/msTools/reference/import_diann_channel.md)
+  : Imports a channel-labelled (e.g. SILAC) DIA-NN report into a dataset
+  store
+- [`check_report()`](https://nicohuttmann.github.io/msTools/reference/check_report.md)
+  : Summarises a DIA-NN report without importing it
+- [`.add_defaults()`](https://nicohuttmann.github.io/msTools/reference/dot-add_defaults.md)
+  : Registers the default column sets used by the DIA-NN importers
+- [`.get_defaults()`](https://nicohuttmann.github.io/msTools/reference/dot-get_defaults.md)
+  : Returns a default column set used by the DIA-NN importers
+
+## Reshaping data
+
+Converting between tibbles, matrices and data frames, and transposing.
+
+- [`data2tibble()`](https://nicohuttmann.github.io/msTools/reference/data2tibble.md)
+  : Transforms any data type to a tibble
+- [`data_frame2tibble()`](https://nicohuttmann.github.io/msTools/reference/data_frame2tibble.md)
+  : Transforms data frames to tibble and adds column for row names
+- [`matrix2tibble()`](https://nicohuttmann.github.io/msTools/reference/matrix2tibble.md)
+  : Transforms matrix to tibble and adds row names as first column
+- [`tibble2data_frame()`](https://nicohuttmann.github.io/msTools/reference/tibble2data_frame.md)
+  : Transforms tibble to data frame
+- [`tibble2matrix()`](https://nicohuttmann.github.io/msTools/reference/tibble2matrix.md)
+  : Transforms tibble to matrix
+- [`transpose_tibble()`](https://nicohuttmann.github.io/msTools/reference/transpose_tibble.md)
+  : Transposes tibble and uses first column as column names
+- [`alignexp_tibble_rows()`](https://nicohuttmann.github.io/msTools/reference/alignexp_tibble_rows.md)
+  : Align and expand rows of a list of tibbles
+- [`list2logical_df()`](https://nicohuttmann.github.io/msTools/reference/list2logical_df.md)
+  : Transforms a list to tibble logical indication for variables
+- [`d2t()`](https://nicohuttmann.github.io/msTools/reference/d2t.md) :
+  Transforms any data type to a tibble
+- [`df2t()`](https://nicohuttmann.github.io/msTools/reference/df2t.md) :
+  Transforms data frames to tibble and adds column for row names
+- [`m2t()`](https://nicohuttmann.github.io/msTools/reference/m2t.md) :
+  Transforms matrix to tibble and adds row names as first column
+- [`t2df()`](https://nicohuttmann.github.io/msTools/reference/t2df.md) :
+  Transforms tibble to data frame
+- [`t2m()`](https://nicohuttmann.github.io/msTools/reference/t2m.md) :
+  Transforms tibble to matrix
+- [`tt()`](https://nicohuttmann.github.io/msTools/reference/tt.md) :
+  Transposes tibble and uses first column as column names
+
+## Ordering and classifying
+
+- [`cap_n()`](https://nicohuttmann.github.io/msTools/reference/cap_n.md)
+  : Convert number vector to character and summarize x \>= y to "y+"
+- [`classify_0NANaNInf()`](https://nicohuttmann.github.io/msTools/reference/classify_0NANaNInf.md)
+  : Returns character label for various types of vecrtor elements
+- [`num2idchar()`](https://nicohuttmann.github.io/msTools/reference/num2idchar.md)
+  : Transforms id numbers into cahracters with equal number of leading
+  zero's
+- [`partition_n()`](https://nicohuttmann.github.io/msTools/reference/partition_n.md)
+  : Transform values of x (row numbers) into groups of n
+- [`partition_n2char()`](https://nicohuttmann.github.io/msTools/reference/partition_n2char.md)
+  : Transform values of x (row numbers) into groups of n as characters
+  with equal number of leading zero's
+- [`length_unique()`](https://nicohuttmann.github.io/msTools/reference/length_unique.md)
+  : Count unique elements
+- [`length_unique_min2()`](https://nicohuttmann.github.io/msTools/reference/length_unique_min2.md)
+  : Count unique elemenmts with n \>= 2
+- [`which_in()`](https://nicohuttmann.github.io/msTools/reference/which_in.md)
+  : Title
+- [`which_is()`](https://nicohuttmann.github.io/msTools/reference/which_is.md)
+  : Title
+
+## Plotting
+
+ggplot helpers and the figure writers.
+[`pdf_()`](https://nicohuttmann.github.io/msTools/reference/pdf_.md) is
+the standard way figures are saved: vector PDF, inches, no dpi.
+
+- [`pdf_()`](https://nicohuttmann.github.io/msTools/reference/pdf_.md) :
+  Title
+
+- [`pdf_open()`](https://nicohuttmann.github.io/msTools/reference/pdf_open.md)
+  : Title
+
+- [`pdf_perm()`](https://nicohuttmann.github.io/msTools/reference/pdf_perm.md)
+  : Opens a permanent pdf device
+
+- [`pdf_temp()`](https://nicohuttmann.github.io/msTools/reference/pdf_temp.md)
+  : Title
+
+- [`png_open()`](https://nicohuttmann.github.io/msTools/reference/png_open.md)
+  : Title
+
+- [`png_temp()`](https://nicohuttmann.github.io/msTools/reference/png_temp.md)
+  : Title
+
+- [`tiff_open()`](https://nicohuttmann.github.io/msTools/reference/tiff_open.md)
+  : Title
+
+- [`tiff_temp()`](https://nicohuttmann.github.io/msTools/reference/tiff_temp.md)
+  : Title
+
+- [`plot_ggtext()`](https://nicohuttmann.github.io/msTools/reference/plot_ggtext.md)
+  : Plots text on an empty ggplots
+
+- [`add_n()`](https://nicohuttmann.github.io/msTools/reference/add_n.md)
+  : Title
+
+- [`add_n_above()`](https://nicohuttmann.github.io/msTools/reference/add_n_above.md)
+  : Title
+
+- [`add_n_below()`](https://nicohuttmann.github.io/msTools/reference/add_n_below.md)
+  : Title
+
+- [`add_y()`](https://nicohuttmann.github.io/msTools/reference/add_y.md)
+  : Add y-vlaues to a ggplot
+
+- [`set_continuous_axes()`](https://nicohuttmann.github.io/msTools/reference/set_continuous_axes.md)
+  :
+
+  Defines ggplot panel by ratio, size, unit size, center, and axis
+  breaks (`+`-able)
+
+- [`set_PCA_labs()`](https://nicohuttmann.github.io/msTools/reference/set_PCA_labs.md)
+  :
+
+  Add PCA axis labels (with % variance) to a ggplot (`+`-able)
+
+- [`.axis_limit_breaks()`](https://nicohuttmann.github.io/msTools/reference/dot-axis_limit_breaks.md)
+  : Helps make nice axis limit breaks
+
+- [`.get_plot_limits()`](https://nicohuttmann.github.io/msTools/reference/dot-get_plot_limits.md)
+  : Extract the built x/y axis ranges of a ggplot
+
+## Reports
+
+Helpers used inside Quarto reports.
+
+- [`button_begin()`](https://nicohuttmann.github.io/msTools/reference/button_begin.md)
+  : Bootstrap button to hide/show segments
+- [`button_end()`](https://nicohuttmann.github.io/msTools/reference/button_end.md)
+  : Bootstrap button to hide/show segments - simple div to end button
+- [`html_justify()`](https://nicohuttmann.github.io/msTools/reference/html_justify.md)
+  : Justify following text
+- [`plot_tabset()`](https://nicohuttmann.github.io/msTools/reference/plot_tabset.md)
+  : Plot the markdown code for individual tabsets
+
+## String helpers
+
+Splitting and locating inside identifiers such as `P12345_SEQ_1_20`.
+
+- [`strsplit_()`](https://nicohuttmann.github.io/msTools/reference/strsplit_.md)
+  : Same as strsplit but option to return as vector and to convert to
+  numeric
+- [`strsplit_keep()`](https://nicohuttmann.github.io/msTools/reference/strsplit_keep.md)
+  : Performs strsplit and keeps elements specified by vector
+- [`strsplit_keep_first()`](https://nicohuttmann.github.io/msTools/reference/strsplit_keep_first.md)
+  : Performs strsplit and keeps first element of each string
+- [`strsplit_keep_firstn()`](https://nicohuttmann.github.io/msTools/reference/strsplit_keep_firstn.md)
+  : Performs strsplit and keeps first n elements of each string
+- [`strsplit_keep_last()`](https://nicohuttmann.github.io/msTools/reference/strsplit_keep_last.md)
+  : Performs strsplit and keeps first n elements of each string
+- [`strsplit_keep_lastn()`](https://nicohuttmann.github.io/msTools/reference/strsplit_keep_lastn.md)
+  : Performs strsplit and keeps first n elements of each string
+- [`str_rev()`](https://nicohuttmann.github.io/msTools/reference/str_rev.md)
+  : Returns given strings in reverse order
+- [`str_locate_last()`](https://nicohuttmann.github.io/msTools/reference/str_locate_last.md)
+  : Locates last position of pattern in given string
+
+## Small tools
+
+- [`cc()`](https://nicohuttmann.github.io/msTools/reference/cc.md) :
+  Vector with elements as names
+- [`fu()`](https://nicohuttmann.github.io/msTools/reference/fu.md) :
+  F(actors) U(nique)
+- [`fus()`](https://nicohuttmann.github.io/msTools/reference/fus.md) :
+  F(actors) U(nique) S(orted)
+- [`cleanup()`](https://nicohuttmann.github.io/msTools/reference/cleanup.md)
+  : Removes objects from the global environment
+
+## Code-writing helpers
+
+Print pasteable code snippets to the console. The `.cat_get_*` writers
+are interactive and prompt for a dataset and columns.
+
+- [`.cat_character()`](https://nicohuttmann.github.io/msTools/reference/dot-cat_character.md)
+  : Prints vectors to console in as character vector
+- [`.cat_character_named()`](https://nicohuttmann.github.io/msTools/reference/dot-cat_character_named.md)
+  : Prints vectors to console in as character vector
+- [`.cat_function()`](https://nicohuttmann.github.io/msTools/reference/dot-cat_function.md)
+  : Prints function snippet to console and clipboard
+- [`.cat_get_data_frame()`](https://nicohuttmann.github.io/msTools/reference/dot-cat_get_data_frame.md)
+  : Writer function for get_data_frame
+- [`.cat_get_data_frame_m()`](https://nicohuttmann.github.io/msTools/reference/dot-cat_get_data_frame_m.md)
+  : Writer function for get_data_frame
+- [`.cat_get_observations_data()`](https://nicohuttmann.github.io/msTools/reference/dot-cat_get_observations_data.md)
+  : Writer function for get_observations_data
+- [`.cat_get_variables_data()`](https://nicohuttmann.github.io/msTools/reference/dot-cat_get_variables_data.md)
+  : Writer function for get_variables_data
+- [`.cat_gsub_n()`](https://nicohuttmann.github.io/msTools/reference/dot-cat_gsub_n.md)
+  : Substitutes pattern multiple times and prints output as code
+- [`.cat_numeric()`](https://nicohuttmann.github.io/msTools/reference/dot-cat_numeric.md)
+  : Prints vectors to console in as character vector
