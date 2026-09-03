@@ -19,13 +19,15 @@ pdf_temp <- function(width = 5, height = 5, ...) {
 }
 
 
-#' Title
+#' Opens a permanent pdf device
 #'
-#' @param ... additional parameters for pdf()
+#' @param file file name (required; use `pdf_temp()` for a temporary file)
 #' @param width the width of the graphics region in inches (default = 5)
 #' @param height the height of the graphics region in inches (default = 5)
+#' @param dir (optional) folder name, if easier to give separately from the file
+#' @param ... additional parameters for pdf()
 #'
-#' @returns
+#' @returns the file path (invisibly); the device is left open
 #' @export
 #'
 #' @examples
@@ -98,14 +100,14 @@ pdf_open <- function(file) {
 
 #' Title
 #'
-#' @param title
-#' @param width
-#' @param height
-#' @param expr
-#' @param file
-#' @param dir
-#' @param open
-#' @param ...
+#' @param title title stored in the file (defaults to the file name)
+#' @param width width in inches
+#' @param height height in inches
+#' @param expr plot or expression to draw
+#' @param file file name (temporary file if not given)
+#' @param dir (optional) folder name, if easier to give separately from the file
+#' @param open open the file after writing (macOS only)
+#' @param ... additional arguments for the graphics device
 #'
 #' @returns
 #' @export
@@ -114,9 +116,13 @@ pdf_open <- function(file) {
 pdf_ <- function(expr, title, width = 8, height = 5, file, dir, open = T, ...) {
 
   file <- .file_dir_ext(file, dir, "pdf")
+
+  file_title <- if (hasArg(title)) title else file
+
   pdf(file = file,
       width = width,
       height = height,
+      title = file_title,
       ...)
 
   if (!open) on.exit(dev.off())
@@ -187,6 +193,7 @@ png_temp <- function(..., width = 10, height = 5, units = "cm", res = 300) {
   return(invisible(file))
 }
 
+
 #' Title
 #'
 #' @param file png file to open (opens file saved under .png_temp if no argument given)
@@ -213,7 +220,6 @@ png_open <- function(file) {
     return(invisible(T))
   }
 }
-
 
 
 #' Title

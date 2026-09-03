@@ -31,8 +31,8 @@ classify_0NANaNInf <- function(x) {
 
 #' Transform values of x (row numbers) into groups of n
 #'
-#' @param x
-#' @param n
+#' @param x vector to work on
+#' @param n number of partitions
 #'
 #' @returns
 #' @export
@@ -49,8 +49,8 @@ partition_n <- function(x, n) {
 
 #' Transforms id numbers into cahracters with equal number of leading zero's
 #'
-#' @param x
-#' @param as.numeric
+#' @param x vector to work on
+#' @param as.numeric return numeric ids instead of characters
 #'
 #' @returns
 #' @export
@@ -68,8 +68,8 @@ num2idchar <- function(x, as.numeric = F) {
 #' Transform values of x (row numbers) into groups of n as characters with equal
 #' number of leading zero's
 #'
-#' @param x
-#' @param n
+#' @param x vector to work on
+#' @param n number of partitions
 #'
 #' @returns
 #' @export
@@ -85,7 +85,7 @@ partition_n2char <- function(x, n) {
 #' Convert number vector to character and summarize x >= y to "y+"
 #'
 #' @param x vector of numbers
-#' @param y
+#' @param y maximum number of characters to keep
 #'
 #' @returns
 #' @export

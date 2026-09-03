@@ -7,7 +7,21 @@
 pdf_(expr, title, width = 8, height = 5, file, dir, open = T, ...)
 }
 \arguments{
-\item{...}{}
+\item{expr}{plot or expression to draw}
+
+\item{title}{title stored in the file (defaults to the file name)}
+
+\item{width}{width in inches}
+
+\item{height}{height in inches}
+
+\item{file}{file name (temporary file if not given)}
+
+\item{dir}{(optional) folder name, if easier to give separately from the file}
+
+\item{open}{open the file after writing (macOS only)}
+
+\item{...}{additional arguments for the graphics device}
 }
 \description{
 Title

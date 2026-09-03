@@ -7,7 +7,13 @@
 add_n(position = "max", size = 3, vjust = -0.6, dodge = 0.75)
 }
 \arguments{
-\item{dodge}{}
+\item{position}{where to place the label ("max", "min" or "mean")}
+
+\item{size}{text size of the label}
+
+\item{vjust}{vertical justification of the label}
+
+\item{dodge}{width passed to \code{position_dodge()}, to match a dodged geom}
 }
 \description{
 Title

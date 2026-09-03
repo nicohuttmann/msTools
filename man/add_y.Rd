@@ -2,13 +2,19 @@
 % Please edit documentation in R/ggplot.R
 \name{add_y}
 \alias{add_y}
-\title{Title}
+\title{Add y-vlaues to a ggplot}
 \usage{
 add_y(position = "y", size = 3, vjust = -0.6, dodge = 0.75)
 }
 \arguments{
-\item{dodge}{}
+\item{position}{where to place the label ("max", "min" or "mean")}
+
+\item{size}{text size of the label}
+
+\item{vjust}{vertical justification of the label}
+
+\item{dodge}{width passed to \code{position_dodge()}, to match a dodged geom}
 }
 \description{
-Title
+Add y-vlaues to a ggplot
 }

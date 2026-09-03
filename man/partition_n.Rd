@@ -7,7 +7,9 @@
 partition_n(x, n)
 }
 \arguments{
-\item{n}{}
+\item{x}{vector to work on}
+
+\item{n}{number of partitions}
 }
 \description{
 Transform values of x (row numbers) into groups of n

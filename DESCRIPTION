@@ -1,19 +1,43 @@
 Package: msTools
-Title: Data-focused functions to analyze proteomics data
+Title: Data-Focused Functions to Analyse Proteomics Data
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R:
     person("Nico", "Hüttmann", , "huttmann.nico@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9321-2675"))
-Description: This package contains data-focused functions to analyze proteomics data 
-License: MIT
+Description: Data-focused functions for analysing proteomics data, built on
+    the on-disk storage that 'msArrow' provides. Contains an opinionated way
+    to organise datasets as variables, observations and long data frames, an
+    importer for DIA-NN reports, and helpers for plotting, string handling
+    and code generation.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-Suggests: 
-    knitr
-    rmarkdown
-VignetteBuilder: knitr
+RoxygenNote: 7.3.3
+URL: https://github.com/nicohuttmann/msTools,
+    https://nicohuttmann.github.io/msTools/
+BugReports: https://github.com/nicohuttmann/msTools/issues
 Imports:
-    tidyverse
+    arrow,
+    dplyr,
+    ggplot2,
+    magrittr,
+    methods,
+    msArrow,
+    purrr,
+    rlang,
+    scales,
+    stats,
+    stringr,
+    tibble,
+    tidyr,
+    tools,
+    utils
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    withr
 Remotes:
     nicohuttmann/msArrow
-RoxygenNote: 7.3.3
+VignetteBuilder: knitr
+Config/testthat/edition: 3

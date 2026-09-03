@@ -7,7 +7,9 @@
 which_is(x, y)
 }
 \arguments{
-\item{y}{}
+\item{x}{vector to look up}
+
+\item{y}{vector to match against}
 }
 \description{
 Title

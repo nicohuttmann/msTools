@@ -9,7 +9,7 @@ cap_n(x, y = 5)
 \arguments{
 \item{x}{vector of numbers}
 
-\item{y}{}
+\item{y}{maximum number of characters to keep}
 }
 \description{
 Convert number vector to character and summarize x >= y to "y+"

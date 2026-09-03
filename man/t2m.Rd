@@ -5,14 +5,10 @@
 \title{Transforms tibble to matrix}
 \usage{
 t2m(data)
-
-t2m(data)
 }
 \arguments{
 \item{data}{tibble}
 }
 \description{
-Transforms tibble to matrix
-
 Transforms tibble to matrix
 }

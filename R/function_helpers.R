@@ -1,7 +1,7 @@
 #' Title
 #'
-#' @param x
-#' @param y
+#' @param x vector to look up
+#' @param y vector to match against
 #'
 #' @returns
 #' @export
@@ -16,8 +16,8 @@ which_is <- function(x, y) {
 
 #' Title
 #'
-#' @param x
-#' @param y
+#' @param x vector to look up
+#' @param y vector to match against
 #'
 #' @returns
 #' @export
@@ -33,7 +33,7 @@ which_in <- function(x, y) {
 
 #' Count unique elements
 #'
-#' @param x
+#' @param x vector to look up
 #'
 #' @returns
 #' @export
@@ -46,7 +46,7 @@ length_unique <- \(x) {
 
 #' Count unique elemenmts with n >= 2
 #'
-#' @param x
+#' @param x vector to look up
 #'
 #' @returns
 #' @export

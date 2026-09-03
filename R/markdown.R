@@ -1,6 +1,6 @@
 #' Bootstrap button to hide/show segments
 #'
-#' @param label
+#' @param label text shown on the button
 #'
 #' @returns
 #' @export

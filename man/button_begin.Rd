@@ -7,7 +7,7 @@
 button_begin(label = "View/Hide")
 }
 \arguments{
-\item{label}{}
+\item{label}{text shown on the button}
 }
 \description{
 Bootstrap button to hide/show segments

@@ -1,0 +1,144 @@
+url: https://nicohuttmann.github.io/msTools/
+
+template:
+  bootstrap: 5
+  bslib:
+    primary: "#18974C"
+    base_font: {google: "Inter"}
+    code_font: {google: "JetBrains Mono"}
+
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
+
+reference:
+
+- title: Datasets
+  desc: >
+    The dataset store. A dataset is a folder holding variables, observations
+    and any number of long `observations x variables` data frames, written to
+    disk through msArrow. The registry lives in two objects in the global
+    environment: `.Datasets` (paths) and `Datasets` (previews).
+  contents:
+  - get_dataset
+  - get_dataset_names
+  - .add_dataset
+  - retag_datasets
+
+- title: Variables
+  desc: Per-variable annotation (precursors, peptides, protein groups).
+  contents:
+  - get_variables
+  - get_variables_data
+  - get_variables_data_names
+  - add_variables_data
+  - save_variables_data
+  - .save_variables_data
+
+- title: Observations
+  desc: Per-observation annotation (runs, samples, conditions).
+  contents:
+  - get_observations
+  - get_observations_data
+  - get_observations_data_names
+  - add_observations_data
+  - save_observations_data
+  - .save_observations_data
+
+- title: Data frames
+  desc: The measured values themselves, stored long and read back on demand.
+  contents:
+  - get_data_frame
+  - get_data_frame_names
+  - open_data_frame
+  - save_data_frame
+  - .save_data_frame
+
+- title: Importing DIA-NN reports
+  desc: >
+    Turn a DIA-NN report straight into a dataset store, without ever holding
+    the whole report in memory.
+  contents:
+  - import_diann
+  - import_diann_channel
+  - check_report
+  - .add_defaults
+  - .get_defaults
+
+- title: Reshaping data
+  desc: Converting between tibbles, matrices and data frames, and transposing.
+  contents:
+  - data2tibble
+  - data_frame2tibble
+  - matrix2tibble
+  - tibble2data_frame
+  - tibble2matrix
+  - transpose_tibble
+  - alignexp_tibble_rows
+  - list2logical_df
+  - d2t
+  - df2t
+  - m2t
+  - t2df
+  - t2m
+  - tt
+
+- title: Ordering and classifying
+  contents:
+  - cap_n
+  - classify_0NANaNInf
+  - num2idchar
+  - partition_n
+  - partition_n2char
+  - length_unique
+  - length_unique_min2
+  - which_in
+  - which_is
+
+- title: Plotting
+  desc: >
+    ggplot helpers and the figure writers. `pdf_()` is the standard way figures
+    are saved: vector PDF, inches, no dpi.
+  contents:
+  - starts_with("pdf_")
+  - starts_with("png_")
+  - starts_with("tiff_")
+  - plot_ggtext
+  - add_n
+  - add_n_above
+  - add_n_below
+  - add_y
+  - set_continuous_axes
+  - set_PCA_labs
+  - .axis_limit_breaks
+  - .get_plot_limits
+
+- title: Reports
+  desc: Helpers used inside Quarto reports.
+  contents:
+  - button_begin
+  - button_end
+  - html_justify
+  - plot_tabset
+
+- title: String helpers
+  desc: Splitting and locating inside identifiers such as `P12345_SEQ_1_20`.
+  contents:
+  - starts_with("strsplit_")
+  - str_rev
+  - str_locate_last
+
+- title: Small tools
+  contents:
+  - cc
+  - fu
+  - fus
+  - cleanup
+
+- title: Code-writing helpers
+  desc: >
+    Print pasteable code snippets to the console. The `.cat_get_*` writers are
+    interactive and prompt for a dataset and columns.
+  contents:
+  - starts_with(".cat_")

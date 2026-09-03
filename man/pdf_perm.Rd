@@ -2,19 +2,26 @@
 % Please edit documentation in R/graphics.R
 \name{pdf_perm}
 \alias{pdf_perm}
-\title{Title}
+\title{Opens a permanent pdf device}
 \usage{
 pdf_perm(file, width = 5, height = 5, dir, ...)
 }
 \arguments{
+\item{file}{file name (required; use \code{pdf_temp()} for a temporary file)}
+
 \item{width}{the width of the graphics region in inches (default = 5)}
 
 \item{height}{the height of the graphics region in inches (default = 5)}
 
+\item{dir}{(optional) folder name, if easier to give separately from the file}
+
 \item{...}{additional parameters for pdf()}
 }
+\value{
+the file path (invisibly); the device is left open
+}
 \description{
-Title
+Opens a permanent pdf device
 }
 \examples{
 pdf_temp()

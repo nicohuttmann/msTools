@@ -71,18 +71,6 @@ tibble2data_frame <- function(data) {
 t2df <- tibble2data_frame
 
 
-#' Transforms tibble to matrix
-#'
-#' @param data tibble
-#'
-#' @return
-#' @export
-#'
-#' @importFrom magrittr %>%
-#'
-t2m <- tibble2matrix
-
-
 #' Transforms matrix to tibble and adds row names as first column
 #'
 #' @param data matrix with row names

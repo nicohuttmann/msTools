@@ -7,7 +7,7 @@
 length_unique_min2(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{vector to look up}
 }
 \description{
 Count unique elemenmts with n >= 2

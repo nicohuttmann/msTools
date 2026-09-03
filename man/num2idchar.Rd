@@ -7,7 +7,9 @@
 num2idchar(x, as.numeric = F)
 }
 \arguments{
-\item{as.numeric}{}
+\item{x}{vector to work on}
+
+\item{as.numeric}{return numeric ids instead of characters}
 }
 \description{
 Transforms id numbers into cahracters with equal number of leading zero's

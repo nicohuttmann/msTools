@@ -7,7 +7,7 @@
 length_unique(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{vector to look up}
 }
 \description{
 Count unique elements
