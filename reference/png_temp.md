@@ -53,6 +53,6 @@ png_open
 #>         return(invisible(T))
 #>     }
 #> }
-#> <bytecode: 0x5562aa3e78f0>
+#> <bytecode: 0x557145bbe458>
 #> <environment: namespace:msTools>
 ```

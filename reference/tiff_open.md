@@ -37,6 +37,6 @@ tiff_open
 #>         return(invisible(T))
 #>     }
 #> }
-#> <bytecode: 0x5562a9ee84a0>
+#> <bytecode: 0x557145a31098>
 #> <environment: namespace:msTools>
 ```

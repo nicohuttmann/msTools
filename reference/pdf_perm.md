@@ -58,6 +58,6 @@ pdf_open
 #>         return(invisible(T))
 #>     }
 #> }
-#> <bytecode: 0x5562a76da2c0>
+#> <bytecode: 0x557145314590>
 #> <environment: namespace:msTools>
 ```
